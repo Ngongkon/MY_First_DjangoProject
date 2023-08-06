@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static%}
+{%block title %}Campus Map{% endblock title %}
+{% block content %}
+    <!-- header section strats -->
+<div class="container" >
+        <nav class="top-navbar ">         
+              <form class="form-inline" method="POST">
+                {%csrf_token%}
+                {{form}}
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">search</button>         
+              </form>
+        </nav>    
+    <!-- map section -->
+      <div class="row mt-4" style="padding: 50px;">
+        <div class="col-md-10 offset-md-1">
+          {{ m|safe }}
+        </div>
+      </div>
+    </div>  
+{% endblock content %}
